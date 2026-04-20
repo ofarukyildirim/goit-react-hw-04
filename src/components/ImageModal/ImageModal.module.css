@@ -1,0 +1,17 @@
+/* Arka plan (karartı) */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Modal kutusu */
+.modal {
+  outline: none;
+  background: transparent;
+  border: none;
+}

@@ -1,0 +1,64 @@
+/* Box sizing standardizasyonu */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margin/padding reset */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* List styling kaldır */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Anchor reset */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Image responsive */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Body default */
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial,
+    sans-serif;
+  line-height: 1.5;
+}
+
+/* Button RESET YOK — sadece inherit bırakıyoruz */
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* Input reset (minimal) */
+input {
+  font: inherit;
+  outline: none;
+}
