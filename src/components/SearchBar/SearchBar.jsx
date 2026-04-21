@@ -18,7 +18,7 @@ const SearchBar = ({ onSubmit }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className={css.frm}>
       <input
         value={query}
         onChange={(e) => setQuery(e.target.value)}
