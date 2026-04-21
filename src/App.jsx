@@ -3,7 +3,10 @@ import SearchBar from "./components/SearchBar/SearchBar";
 import ImageGallery from "./components/ImageGallery/ImageGallery";
 import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn";
 import ImageModal from "./components/ImageModal/ImageModal";
+import Loader from "./components/Loader/Loader";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage";
 import { fetchImagesWithQuery } from "./api";
+import { Toaster } from "react-hot-toast";
 import "./App.css";
 
 const App = () => {
@@ -53,7 +56,6 @@ const App = () => {
 
   useEffect(() => {
     if (images.length === 0) return;
-
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [images]);
 
@@ -67,11 +69,14 @@ const App = () => {
 
   return (
     <div>
-      <SearchBar onSearch={searchImages} />
+      <Toaster position="top-right" />
+      <SearchBar onSubmit={searchImages} />
 
-      {error && <p>Error, please try again</p>}
+      {error && <ErrorMessage />}
 
       <ImageGallery images={images} onSelect={openModal} />
+
+      {loading && <Loader />}
 
       <div ref={scrollRef} />
 
